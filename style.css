@@ -1,0 +1,144 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightPink: hsl(275, 100%, 97%);
+  --grayishPurple: hsl(292, 16%, 49%);
+  --grayishPurpleOpacity: hsla(293, 16%, 49%, 0.2);
+  --darkPurple: hsl(292, 42%, 14%);
+  --darkPurpleOpacity: hsla(292, 42%, 14%, 0.1);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work sans", sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--lightPink);
+  height: 100vh;
+}
+#top {
+  height: 232px;
+  background-image: url("./assets/images/background-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#bottom {
+  flex: 1;
+}
+
+main {
+  background-color: var(--white);
+  position: absolute;
+  top: 144px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 327px;
+  max-width: 327px;
+  border-radius: 8px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  box-shadow: 0px 4px 16px 8px var(--grayishPurpleOpacity);
+}
+
+#titleContainer {
+  h1 {
+    color: var(--darkPurple);
+  }
+  display: flex;
+  column-gap: 24px;
+  img {
+    width: 24px;
+  }
+}
+
+.questionContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.statementContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    color: var(--darkPurple);
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 216px;
+  }
+}
+
+.answerContainer {
+  display: none;
+  p {
+    line-height: 1.2rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--grayishPurple);
+  }
+}
+
+.hr {
+  border-top: 0.5px solid var(--darkPurpleOpacity);
+}
+@media (min-width: 768px) {
+  main {
+    min-width: 640px;
+    max-width: 640px;
+    padding: 48px 40px;
+  }
+
+
+  #titleContainer {
+    h1 {
+      color: var(--darkPurple);
+      font-size: 56px;
+    }
+    display: flex;
+    column-gap: 24px;
+    img {
+      width: 40px;
+    }
+  }
+
+  .plusQuestion {
+    cursor: pointer;
+  }
+  .statementContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      color: var(--darkPurple);
+      font-size: 20px;
+      font-weight: 600;
+      max-width: max-content;
+    }
+  }
+
+  .answerContainer {
+    display: none;
+    p {
+      line-height: 1.6rem;
+      max-width: 520px;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--grayishPurple);
+    }
+  }
+  #top {
+    background-image: url("./assets/images/background-pattern-desktop.svg");
+    height: 320px;
+  }
+}
